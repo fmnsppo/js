@@ -5,8 +5,8 @@ var tt = {
 };
 
 function generateSigned() {
-    secret_key = tt.secret_key;
-    encrypt_key = tt.encrypt_key;
+    var secret_key = tt.secret_key,
+    encrypt_key = tt.encrypt_key,
     download_key = tt.downloadKey;
     let n = Date.now().toString(),
         i = {
