@@ -5,15 +5,15 @@ var tt = {
 };
 
 function generateSigned() {
-    secret_key = tt.secret_key;
-    encrypt_key = tt.encrypt_key;
+    var secret_key = tt.secret_key,
+    encrypt_key = tt.encrypt_key,
     download_key = tt.downloadKey;
     let n = Date.now().toString(),
         i = {
             hash: CryptoJS.HmacSHA256(JSON.stringify({
                 timesTamp: n
-            }), this.secret_key).toString(),
+            }), secret_key).toString(),
             timesTamp: n
         };
-    return CryptoJS.AES.encrypt(JSON.stringify(i), this.encrypt_key).toString()
+    return CryptoJS.AES.encrypt(JSON.stringify(i), encrypt_key).toString()
 }
